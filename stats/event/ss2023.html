@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obliviosa Subathon</title>
+    <script src="https://kit.fontawesome.com/6824d55697.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #004225 25%, #000000);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            padding: 1px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            margin-right: 20px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .navbar a,
+        .dropdown-content a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #f8c471;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #004225;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px 10px;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #003015;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .icons a {
+            color: #f8c471;
+            margin-left: 10px;
+            color: #f8c471;
+            font-size: 24px;
+            text-decoration: none;
+        }
+		body {
+			line-height: 1.25;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			color: #f8c471;
+            padding-left: 15px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 1600px;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+
+        ol,
+        p {
+            padding-left: 15px;
+            margin: 15px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        strong {
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        em {
+            font-style: italic;
+            color: #e74c3c;
+        }
+
+        footer {
+            background-color: #004225;
+            padding: 2px;
+            text-align: center;
+            font-size: 14px;
+            color: #f8c471;
+            position: static;
+            width: 100%;
+            bottom: 0;
+        }
+
+        a:hover {
+            color: #f0e68c;
+        }
+
+        a:active {
+            color: #ff6347;
+        }
+
+        #timer {
+            display: inline-flex;
+            align-items: center;
+            flex-direction: row;
+            background-color: rgba(255, 255, 255, 0.1);
+            /* semi-transparent background */
+            border-radius: 10px;
+        }
+
+        #timer p:first-child {
+            margin-right: 10px;
+            color: #f8c471;
+        }
+
+        .time-unit {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .time-unit span {
+            font-size: 24px;
+            color: #f8c471;
+        }
+
+        .time-label {
+            font-size: 14px;
+            color: #fff;
+        }
+    </style>
+</head>
+<script>
+    // Set the date and time for the countdown to end (e.g., "October 30, 2023 15:00:00")
+    var countDownDate = new Date("November 1, 2023 15:00:00").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+
+        // Time calculations
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+        // If the countdown is finished, display some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("timer").innerHTML = "Update is now due! Please wait";
+        }
+    }, 1000);
+</script>
+
+<body>
+    <div class="header">
+        <h1>Obliviosa Subathon (29th - 30th September 2023)</h1>
+        <div class="navbar">
+            <div class="dropdown">
+                <a href="/stats/index.html">Latest</a>
+            </div>
+            <div class="dropdown">
+                <a href="#archive">Archives</a>
+                <div class="dropdown-content">
+                    <a href="october_2023.html">October 2023</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#special-events">Special Events</a>
+                <div class="dropdown-content">
+                    <a href="ss2013.html">Subtember Subathon 2023</a>
+                </div>
+            </div>
+            <div class="icons">
+                <a href="https://twitch.tv/obliviosaofficial" target="_blank" title="Obliviosa on Twitch">
+                    <i class="fa-brands fa-twitch fa-2x"></i>
+                </a>
+                <a href="https://instagram.com/obliviosaofficial" target="_blank" title="Obliviosa on Instagram">
+                    <i class="fa-brands fa-instagram fa-2x"></i>
+                </a>
+            </div>
+        </div>
+        <div id="timer">
+            <p>Next update in:</p>
+            <div class="time-unit">
+                <span id="days"></span>
+                <p class="time-label">Days</p>
+            </div>
+            <div class="time-unit">
+                <span id="hours"></span>
+                <p class="time-label">Hours</p>
+            </div>
+            <div class="time-unit">
+                <span id="minutes"></span>
+                <p class="time-label">Minutes</p>
+            </div>
+            <div class="time-unit">
+                <span id="seconds"></span>
+                <p class="time-label">Seconds</p>
+            </div>
+        </div>
+    </div>
+    <img src="https://www.obliviosa.net/assets/livsubathonchat.png" alt="Chart Unavailable">
+    <h2>Detailed chat stats</h2>
+    <p>Channel Mods are marked as <strong>bold</strong>. Bots are <em>italicised</em></p>
+    <ol>
+        <li>minoarno: 962 messages</li>
+        <li>extremedolphins: 919 messages</li>
+        <li><strong>AngleGabriel__</strong>: 611 messages</li>
+        <li>TheOneAndOnlyDo_: 391 messages</li>
+        <li>ItsChrisyBaby: 337 messages</li>
+        <li><strong>Phantomspower</strong>: 330 messages</li>
+        <li>OfficiallySp: 262 messages</li>
+        <li><em>Streamlabs</em>: 251 messages</li>
+        <li><strong>AKIBA212</strong>: 222 messages</li>
+        <li>Knight1y: 219 messages</li>
+        <li>KingCobraDK: 191 messages</li>
+        <li>MoonlitAly and MrXadion: 142 messages each</li>
+        <li>Tjorbjorn: 138 messages</li>
+        <li>firesaffron: 124 messages</li>
+        <li><mark>ObliviosaOfficial</mark>: 115 messages</li>
+        <li>PrizeGottiGaming and <em>WizeBot</em>: 105 messages each</li>
+        <li>ph00kster: 101 messages</li>
+        <li>BigTiddyGoff_: 97 messages</li>
+        <li>IcyUK: 95 messages</li>
+        <li><em>Nightbot</em>: 90 messages</li>
+        <li>Thicc_Loaf: 83 messages</li>
+        <li>JDGhosted and itzrezz12: 80 messages each</li>
+        <li>Neidorii: 78 messages</li>
+        <li>ayvottv: 74 messages</li>
+        <li><strong>OSFrog</strong>: 71 messages</li>
+        <li>BigDog_Q: 64 messages</li>
+        <li>RD07x__: 60 messages</li>
+        <li><strong>willzystreams</strong>: 55 messages</li>
+        <li>Dordin: 54 messages</li>
+        <li>Buildingbob345: 47 messages</li>
+        <li>BeholdBrooke: 46 messages</li>
+        <li>aclcgrimreever: 44 messages</li>
+        <li>JukusMaximuss: 41 messages</li>
+        <li>xxpoohdaddyxx: 40 messages</li>
+        <li>asurikae: 38 messages</li>
+        <li>DrDerpalot: 37 messages</li>
+        <li>LilacIsPurple: 35 messages</li>
+        <li>chiefbeef1234: 34 messages</li>
+        <li>Sheogorn and H0RNBY: 30 messages each</li>
+        <li>Shiique: 28 messages</li>
+        <li>destroyerjaan and Masterpav: 27 messages each</li>
+        <li><em>StreamElements</em>: 24 messages</li>
+        <li>PandiPeruvi: 23 messages</li>
+        <li>ysavibe and sammziee: 22 messages each</li>
+    </ol>
+    <footer>
+        <p>Go watch <a href="https://www.twitch.tv/obliviosaofficial">Obliviosa on Twitch</a> or even <a href="https://www.instagram.com/obliviosaofficial/">follow her on Instagram</a>.</p>
+        <p>Statpage made with ❤️ by OfficiallySp (Shane Pepperell ©️ 2023)</p>
+    </footer>
+</body>
+
+</html>
