@@ -8,7 +8,7 @@
 		// Determine the correct path to navbar.html based on the current URL
 		let navbarPath = 'navbar.html'; // Default path for stat page
 		if (window.location.pathname.includes('/stats/archive/') || window.location.pathname.includes('/stats/events/')) {
-			navbarPath = '../../navbar.html'; // Path for pages in archive and events directories
+			navbarPath = '../navbar.html'; // Path for pages in archive and events directories
 		}
 
 		xhr.onreadystatechange = function() {
