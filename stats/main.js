@@ -1,16 +1,29 @@
 // Navbar
-  function loadNavbar() {
-    const navbarPlaceholder = document.getElementById('navbar-placeholder');
-    const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        navbarPlaceholder.innerHTML = this.responseText;
-      }
-    };
-    xhr.open('GET', 'navbar.html', true);
-	xhr.open('GET', '../navbar.html', true);
-    xhr.send();
-  }
+	function loadNavbar() {
+		const navbarPlaceholder = document.getElementById('navbar-placeholder');
+		if (!navbarPlaceholder) return;  // Exit if placeholder not found
+
+		const xhr = new XMLHttpRequest();
+
+		// Determine the correct path to navbar.html
+		let navbarPath = 'navbar.html'; // Default path for root-level pages
+		const pathSegments = window.location.pathname.split('/').filter(Boolean);
+
+		// Adjust path based on the depth of the current page in the directory structure
+		if (pathSegments.length > 1) { // More than one level deep
+			const depth = pathSegments.length - 1; // Subtract 1 for the actual page
+			navbarPath = '../'.repeat(depth) + 'navbar.html';
+		}
+
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				navbarPlaceholder.innerHTML = this.responseText;
+			}
+		};
+
+		xhr.open('GET', navbarPath, true);
+		xhr.send();
+	}
 
   window.onload = loadNavbar;
 
