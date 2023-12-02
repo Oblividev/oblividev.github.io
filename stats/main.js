@@ -5,14 +5,10 @@
 
 		const xhr = new XMLHttpRequest();
 
-		// Determine the correct path to navbar.html
-		let navbarPath = 'navbar.html'; // Default path for root-level pages
-		const pathSegments = window.location.pathname.split('/').filter(Boolean);
-
-		// Adjust path based on the depth of the current page in the directory structure
-		if (pathSegments.length > 1) { // More than one level deep
-			const depth = pathSegments.length - 1; // Subtract 1 for the actual page
-			navbarPath = '../'.repeat(depth) + 'navbar.html';
+		// Determine the correct path to navbar.html based on the current URL
+		let navbarPath = 'navbar.html'; // Default path for stat page
+		if (window.location.pathname.includes('/stats/archive/') || window.location.pathname.includes('/stats/events/')) {
+			navbarPath = '../../navbar.html'; // Path for pages in archive and events directories
 		}
 
 		xhr.onreadystatechange = function() {
