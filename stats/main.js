@@ -1,10 +1,3 @@
-// Window onload event
-window.onload = function() {
-    loadNavbar();
-//    styleChatUsers();
-    // Any other onload actions
-};
-
 // Navbar
   function loadNavbar() {
     const navbarPlaceholder = document.getElementById('navbar-placeholder');
@@ -15,6 +8,7 @@ window.onload = function() {
       }
     };
     xhr.open('GET', 'navbar.html', true);
+	xhr.open('GET', '../navbar.html', true);
     xhr.send();
   }
 
