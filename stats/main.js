@@ -52,17 +52,31 @@
     }, 1000);
 
 // Styling
-	function styleChatUsers() {
-		var mods = ["akiba212", "anglegabriel__", "fossabot", "livytaskbot", "nightbot", "osfrog", "Phantomspower", "playwithviewersbot", "songlistbot", "streamelements", "streamlabs", "willzystreams"];
-		var vips = ["maicomolo", "beholdbrooke", "lowlifeprincessx", "sammziee", "knight1y", "rd07x__", "officiallysp", "sirjester2", "minoarno", "tjorbjorn", "aribearree", "mikey98123"];
-		var chatUsers = document.getElementsByClassName("chat-user");
-		for(var i = 0; i < chatUsers.length; i++) {
-			var username = chatUsers[i].textContent.split(":")[0].trim();
-			if(mods.includes(username)) {
-				chatUsers[i].style.fontWeight = "italic";
-			}
-			if(vips.includes(username)) {
-				chatUsers[i].style.fontStyle = "bold";
-			}
-		}
-	}
+// Predefined list of users to bold
+var usersToBold = ["AKIBA212", "anglegabriel__", "Fossabot", "Livytaskbot", "Nightbot", "OSfrog", "Phantomspower", "PlayWithViewersBot", "Songlistbot", "StreamElements", "Streamlabs", "willzystreams", "knight1y"];
+
+// Predefined list of users to italicize
+var usersToItalicize = ["MaicoMolo", "BeholdBrooke", "LowLifePrincessx", "sammziee", "RD07x__", "OfficiallSsp", "Sirjester2", "minoarno", "tjorbjorn", "aribearree", "mikey98123"];
+
+// Function to update list styling
+function updateListStyling() {
+    var listItems = document.querySelectorAll('li');
+    listItems.forEach(function(item) {
+        // Extract username from the list item
+        var username = item.textContent.split(':')[0];
+
+        // Check and apply bold styling
+        if (usersToBold.includes(username)) {
+            item.innerHTML = '<strong>' + item.innerHTML + '</strong>';
+        }
+
+        // Check and apply italic styling
+        if (usersToItalicize.includes(username)) {
+            item.innerHTML = '<em>' + item.innerHTML + '</em>';
+        }
+    });
+}
+
+// Run the function to update styling
+updateListStyling();
+
