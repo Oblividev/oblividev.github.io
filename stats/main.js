@@ -25,7 +25,7 @@
 
 // Timer
     // Set the date and time for the countdown to end (e.g., "October 30, 2023 15:00:00")
-    var countDownDate = new Date("January 7, 2024 15:00:00").getTime();
+    var countDownDate = new Date("February 1, 2024 15:00:00").getTime();
 
     // Update the count down every 1 second
     var x = setInterval(function() {
@@ -52,18 +52,17 @@
     }, 1000);
 
 // Styling
-//	function styleChatUsers() {
-//		var mods = ["akiba212", "anglegabriel__", "fossabot", "livytaskbot", "nightbot", "osfrog", "Phantomspower", "playwithviewersbot", "songlistbot", "streamelements", "streamlabs", "willzystreams"];
-//		var vips = ["maicomolo", "beholdbrooke", "lowlifeprincessx", "sammziee", "knight1y", "rd07x__", "officiallysp", "sirjester2", "minoarno", "tjorbjorn", "aribearree", "mikey98123"];
-//		var chatUsers = document.getElementsByClassName("chat-user");
-//		for(var i = 0; i < chatUsers.length; i++) {
-//			var username = chatUsers[i].textContent.split(":")[0].trim();
-//			if(mods.includes(username)) {
-//				chatUsers[i].style.fontWeight = "bold";
-//			}
-//			if(vips.includes(username)) {
-//				chatUsers[i].style.fontStyle = "italic";
-//			}
-//		}
-//	}
-//
+	function styleChatUsers() {
+		var mods = ["akiba212", "anglegabriel__", "fossabot", "livytaskbot", "nightbot", "osfrog", "Phantomspower", "playwithviewersbot", "songlistbot", "streamelements", "streamlabs", "willzystreams"];
+		var vips = ["maicomolo", "beholdbrooke", "lowlifeprincessx", "sammziee", "knight1y", "rd07x__", "officiallysp", "sirjester2", "minoarno", "tjorbjorn", "aribearree", "mikey98123"];
+		var chatUsers = document.getElementsByClassName("chat-user");
+		for(var i = 0; i < chatUsers.length; i++) {
+			var username = chatUsers[i].textContent.split(":")[0].trim();
+			if(mods.includes(username)) {
+				chatUsers[i].style.fontWeight = "italic";
+			}
+			if(vips.includes(username)) {
+				chatUsers[i].style.fontStyle = "bold";
+			}
+		}
+	}
