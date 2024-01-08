@@ -51,7 +51,7 @@
 
 // Styling
 // Predefined list of users to bold
-var usersToItalicize = ["AKIBA212", "anglegabriel__", "Fossabot", "Livytaskbot", "Nightbot", "OSfrog", "Phantomspower", "PlayWithViewersBot", "Songlistbot", "StreamElements", "Streamlabs", "willzystreams", "Knight1y"];
+var usersToItalicize = ["AKIBA212", "AngleGabriel__", "Fossabot", "Livytaskbot", "Nightbot", "OSFrog", "Phantomspower", "PlayWithViewersBot", "Songlistbot", "StreamElements", "Streamlabs", "willzystreams", "Knight1y"];
 
 // Predefined list of users to italicize
 var usersToBold = ["MaicoMolo", "BeholdBrooke", "LowLifePrincessx", "sammziee", "RD07x__", "OfficiallySp", "Sirjester2", "minoarno", "Tjorbjorn", "aribearree", "mikey98123", "MrXadion"];
