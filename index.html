@@ -1,20 +1,100 @@
 <!DOCTYPE html>
-<style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is Liv Live Today?</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@600&display=swap" rel="stylesheet">
+	<script
+		type="module"
+		src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.14/dist/nightowl.js"
+	></script>
+    <style>
         body {
-            background: #A9A9A9;
+		  	font-family: "Shantell Sans", cursive;
+            text-align: center;
+            margin-top: 50px;
         }
-</style>
-liv is a nerd<br>
+		h1 {
+			font-size: 72px;
+		}
+		h2 {
+			font-size: 48px;
+		}
+		h3 {
+			font-size: 36px;
+		}
+		h4 {
+			font-size: 28px;
+		}
+        .yes {
+            color: green;
+        }
+        .no {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h2>Is Obliviosa Going Live Today?</h2>
+<h1 id="live-status">Checking...</h1>
+<h3 id="time-slot"></h3>
+<h4 id="watch-link" href="#" style="display:none;">Watch Liv Live here!</h4>
 
-There is nothing here at the moment. i have no idea what to put here<br>
-if you're looking for chatstats <a href="https://obliviosa.net/stats">Go Here</a><br>
-in the meantime. Go watch <a href="https://www.twitch.tv/obliviosaofficial">Obliviosa on Twitch</a>
-or even <a href="https://www.instagram.com/obliviosaofficial/">follow her on Instagram</a>.<br>
+<script>
+    // Define Liv's schedule
+    // Format: [day of the week, start hour (24h format), start minute, live link]
+    // Example: 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+    const schedule = [
+//      [1, 15, 0, "https://www.twitch.tv/obliviosaofficial"],
+        [2, 14, 0, "https://www.twitch.tv/obliviosaofficial"],
+		[3, 18, 30, "https://www.twitch.tv/obliviosaofficial"],
+		[4, 14, 0, "https://www.twitch.tv/obliviosaofficial"],
+//		[5, 18, 0, "https://www.twitch.tv/obliviosaofficial"],
+		[6, 18, 30, "https://www.twitch.tv/obliviosaofficial"],
+		[0, 18, 30, "https://www.twitch.tv/obliviosaofficial"],
+    ];
 
-<iframe src="https://player.twitch.tv/?channel=obliviosaofficial&parent=obliviosa.net" frameborder="1" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
-<iframe
-  id="chat_embed"
-  src="https://www.twitch.tv/embed/obliviosaofficial/chat?parent=obliviosa.net"
-  height="500"
-  width="350">
-</iframe>
+    function checkLivLive() {
+        const now = new Date();
+        const dayOfWeek = now.getDay();
+        let liveToday = false;
+        let startTime = "";
+        let liveLink = "";
+
+        for (let i = 0; i < schedule.length; i++) {
+            const [liveDay, startHour, startMinute, link] = schedule[i];
+
+            if (dayOfWeek === liveDay) {
+                liveToday = true;
+                startTime = `${startHour.toString().padStart(2, '0')}:${startMinute.toString().padStart(2, '0')}`;
+                liveLink = link;
+                break;
+            }
+        }
+
+        const liveStatus = document.getElementById('live-status');
+        const timeSlot = document.getElementById('time-slot');
+        const watchLink = document.getElementById('watch-link');
+
+        if (liveToday) {
+            liveStatus.textContent = "YEP";
+            liveStatus.classList.add("yes");
+            timeSlot.textContent = `Liv is going live today @ ${startTime} GMT <3`;
+            watchLink.href = liveLink;
+            watchLink.style.display = "inline";
+        } else {
+            liveStatus.textContent = "NOPE";
+            liveStatus.classList.add("no");
+            timeSlot.textContent = "Liv is not going live today. :(";
+            watchLink.style.display = "none";
+        }
+    }
+
+    // Run the check when the page loads
+    window.onload = checkLivLive;
+</script>
+</body>
+</html>
