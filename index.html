@@ -26,7 +26,7 @@
 		h3 {
 			font-size: 36px;
 		}
-		h4 {
+		a {
 			font-size: 28px;
 		}
         .yes {
@@ -41,13 +41,10 @@
 <h2>Is Obliviosa Going Live Today?</h2>
 <h1 id="live-status">Checking...</h1>
 <h3 id="time-slot"></h3>
-<h4 id="watch-link" href="https://www.twitch.tv/obliviosaofficial" style="display:none;">Watch Liv Live here!</h4>
+<a id="watch-link" href="https://www.twitch.tv/obliviosaofficial">Watch Liv Live here!</a>
+
     <div id="twitch-embed"></div>
-
-    <!-- Load the Twitch embed JavaScript file -->
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
-
-    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
     <script type="text/javascript">
       new Twitch.Embed("twitch-embed", {
         width: 1280,
@@ -62,6 +59,7 @@
     // Define Liv's schedule
     // Format: [day of the week, start hour (24h format), start minute, live link]
     // Example: 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+	// Comment out any days she isnt streaming
     const schedule = [
 //      [1, 15, 0, "https://www.twitch.tv/obliviosaofficial"],
         [2, 14, 0, "https://www.twitch.tv/obliviosaofficial"],
@@ -107,8 +105,6 @@
             watchLink.style.display = "none";
         }
     }
-
-    // Run the check when the page loads
     window.onload = checkLivLive;
 </script>
 </body>
