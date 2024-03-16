@@ -41,8 +41,23 @@
 <h2>Is Obliviosa Going Live Today?</h2>
 <h1 id="live-status">Checking...</h1>
 <h3 id="time-slot"></h3>
-<h4 id="watch-link" href="#" style="display:none;">Watch Liv Live here!</h4>
+<h4 id="watch-link" href="https://www.twitch.tv/obliviosaofficial" style="display:none;">Watch Liv Live here!</h4>
+    <div id="twitch-embed"></div>
 
+    <!-- Load the Twitch embed JavaScript file -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element -->
+    <script type="text/javascript">
+      new Twitch.Embed("twitch-embed", {
+        width: 1280,
+        height: 720,
+        channel: "obliviosaofficial",
+        // Only needed if this page is going to be embedded on other websites
+        parent: ["https://obliviosa.net/"]
+      });
+    </script>
+<p><a href="stats/index.html">looking for chatstats? find them here</a></p>
 <script>
     // Define Liv's schedule
     // Format: [day of the week, start hour (24h format), start minute, live link]
