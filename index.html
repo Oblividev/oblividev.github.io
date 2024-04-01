@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Is Liv Live Today?</title>
+    <title>Obliviosa.net</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/6824d55697.js" crossorigin="anonymous"></script>
 	<script
 		type="module"
 		src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.14/dist/nightowl.js"
@@ -29,24 +30,23 @@
 		a {
 			font-size: 28px;
 		}
-	    	h4 {
+	    h4 {
 			font-size: 10px;
 		}
-        .yes {
-            color: green;
-        }
-        .no {
-            color: red;
-        }
+		.fa-brands {
+			padding: 10px;
+		}
     </style>
 </head>
 <body>
-<h2>Is Obliviosa Going Live Today?</h2>
-<h1 id="live-status">Checking...</h1>
-<h3 id="time-slot"></h3>
-<a id="watch-link" href="https://www.twitch.tv/obliviosaofficial">Watch Liv Live here!</a>
-
-    <div id="twitch-embed"></div>
+<h2>Obliviosa</h2>
+<h3>Streamer, Gamer, Musician</h3>
+	<a class="nightowl-daylight" href="https://www.twitch.tv/obliviosaofficial"> <i class="fa-brands fa-twitch fa-2x"></i></a>
+	<a class="nightowl-daylight" href="https://www.instagram.com/obliviosaofficial/"> <i class="fa-brands fa-instagram fa-2x"></i></a>
+	<a class="nightowl-daylight" href="https://www.youtube.com/@ObliviosaOfficial"> <i class="fa-brands fa-youtube fa-2x"></i></a>
+	<a class="nightowl-daylight" href="https://www.tiktok.com/@obliviosa"> <i class="fa-brands fa-tiktok fa-2x"></i></a>
+	<a class="nightowl-daylight" href="https://twitter.com/Obliviosa"> <i class="fa-brands fa-twitter fa-2x"></i></a>
+<div id="twitch-embed"></div>
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
     <script type="text/javascript">
       new Twitch.Embed("twitch-embed", {
@@ -59,57 +59,5 @@
     </script>
 <p><a href="stats/index.html">looking for chatstats? find them here</a></p>
 <h4>liv is a nerd</h4>
-<script>
-    // Define Liv's schedule
-    // Format: [day of the week, start hour (24h format), start minute, live link]
-    // Example: 0 = Sunday, 1 = Monday, ..., 6 = Saturday
-	// Comment out any days she isnt streaming
-    const schedule = [
-//      [1, 15, 0, "https://www.twitch.tv/obliviosaofficial"],
-        [2, 14, 0, "https://www.twitch.tv/obliviosaofficial"],
-		[3, 18, 30, "https://www.twitch.tv/obliviosaofficial"],
-		[4, 14, 0, "https://www.twitch.tv/obliviosaofficial"],
-//		[5, 18, 0, "https://www.twitch.tv/obliviosaofficial"],
-		[6, 18, 30, "https://www.twitch.tv/obliviosaofficial"],
-		[0, 18, 30, "https://www.twitch.tv/obliviosaofficial"],
-    ];
-
-    function checkLivLive() {
-        const now = new Date();
-        const dayOfWeek = now.getDay();
-        let liveToday = false;
-        let startTime = "";
-        let liveLink = "";
-
-        for (let i = 0; i < schedule.length; i++) {
-            const [liveDay, startHour, startMinute, link] = schedule[i];
-
-            if (dayOfWeek === liveDay) {
-                liveToday = true;
-                startTime = `${startHour.toString().padStart(2, '0')}:${startMinute.toString().padStart(2, '0')}`;
-                liveLink = link;
-                break;
-            }
-        }
-
-        const liveStatus = document.getElementById('live-status');
-        const timeSlot = document.getElementById('time-slot');
-        const watchLink = document.getElementById('watch-link');
-
-        if (liveToday) {
-            liveStatus.textContent = "YEP";
-            liveStatus.classList.add("yes");
-            timeSlot.textContent = `Liv is going live today @ ${startTime} GMT <3`;
-            watchLink.href = liveLink;
-            watchLink.style.display = "inline";
-        } else {
-            liveStatus.textContent = "NOPE";
-            liveStatus.classList.add("no");
-            timeSlot.textContent = "Liv is not going live today. :(";
-            watchLink.style.display = "none";
-        }
-    }
-    window.onload = checkLivLive;
-</script>
 </body>
 </html>
