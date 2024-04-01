@@ -68,6 +68,30 @@
             font-size: 24px;
             text-decoration: none;
         }
+		.container {
+			display: flex;
+			padding-right: 25px;
+		}
+
+		.chat-stats {
+			flex: 1;
+		}
+
+		.emote-stats {
+			text-align: center; /* Center-align text */
+		}
+
+		.podium-item img{
+			width: 100px; /* Adjust the width as needed */
+			height: auto; /* Maintain aspect ratio */
+		}
+
+		.emote-list img{
+			width: 24px; /* Adjust the width as needed */
+			height: auto; /* Maintain aspect ratio */
+			text-align: center
+		}
+
 
         body {
             line-height: 1.25;
