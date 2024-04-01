@@ -87,8 +87,8 @@
 		}
 
 		.emote-list img{
-			width: 24px; /* Adjust the width as needed */
-			height: 24px; /* Maintain aspect ratio */
+			width: 50px; /* Adjust the width as needed */
+			height: 50px; /* Maintain aspect ratio */
 			text-align: center
 		}
 
