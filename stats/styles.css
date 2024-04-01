@@ -83,12 +83,12 @@
 
 		.podium-item img{
 			width: 100px; /* Adjust the width as needed */
-			height: auto; /* Maintain aspect ratio */
+			height: 100px; /* Maintain aspect ratio */
 		}
 
 		.emote-list img{
 			width: 24px; /* Adjust the width as needed */
-			height: auto; /* Maintain aspect ratio */
+			height: 24px; /* Maintain aspect ratio */
 			text-align: center
 		}
 
