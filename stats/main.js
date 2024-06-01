@@ -51,10 +51,13 @@
 
 // Styling
 // Predefined list of Mods to bold
-var usersToItalicize = ["AKIBA212", "AngleGabriel__", "Fossabot", "Livytaskbot", "Nightbot", "OSFrog", "Phantomspower", "PlayWithViewersBot", "Songlistbot", "StreamElements", "Streamlabs", "willzystreams", "Knight1y"];
+var usersToItalicize = ["AKIBA212", "AngleGabriel__", "Fossabot", "Knight1y", "livytaskbot", "Nightbot", "OSFrog", "Phantomspower", "PlayWithViewersBot", "songlistbot", "StreamElements", "Streamlabs", "WizeBot"];
 
 // Predefined list of VIP's to italicize
-var usersToBold = ["MaicoMolo", "BeholdBrooke", "LowlifePrincessx", "sammziee", "RD07x__", "OfficiallySp", "Sirjester2", "minoarno", "Tjorbjorn", "aribearree", "mikey98123", "MrXadion"];
+var usersToBold = ["aribearree", "BeholdBrooke", "BigBangRay", "justloliehh", "LowlifePrincessx", "MaicoMolo", "MeshThaa", "minoarno", "OfficiallySp", "RD07x__", "Rhyer25", "sammziee", "SirJester2", "Tjorbjorn"];
+
+// User to underline and color
+var userToHighlight = ["ObliviosaOfficial"];
 
 function updateListStyling() {
     var listItems = document.querySelectorAll('li');
@@ -62,25 +65,30 @@ function updateListStyling() {
         // Find usernames in the list item
         var fullText = item.textContent;
         var parts = fullText.split(/, | and /); // Split by ", " and " and " to handle multiple users
-        
+
         // Iterate over each part to check for usernames and apply styles
         parts = parts.map(part => {
             var username = part.split(':')[0].trim();
             var messageCount = part.split(':')[1];
-            
+
             // Apply bold styling
             if (usersToBold.includes(username)) {
                 username = `<strong>${username}</strong>`;
             }
-            
+
             // Apply italic styling
             if (usersToItalicize.includes(username)) {
                 username = `<em>${username}</em>`;
             }
 
+            // Apply underline and color styling
+            if (userToHighlight.includes(username)) {
+                username = `<span style="text-decoration: underline; color: pink;">${username}</span>`;
+            }
+
             return username + (messageCount ? ': ' + messageCount : '');
         });
-        
+
         // Reconstruct the item's innerHTML with styled usernames
         var updatedText = parts.join(', ').replace(/, ([^,]*)$/, ' and $1'); // Re-adding the 'and' for the last item
         item.innerHTML = updatedText;
