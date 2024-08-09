@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obliviosa - 1 Year Chat Stats Recap</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <header>
+        <div class="animated-bg"></div>
+        <h1>Obliviosa Chat Stats</h1>
+        <p>1 Year in Review</p>
+    </header>
+
+    <main>
+        <section id="total-messages" class="section">
+            <h2>Total Messages</h2>
+            <div class="stat-container">
+                <div class="stat">
+                    <span class="number" id="messageCount">144820</span>
+                    <span class="label">Messages Sent</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="top-chatters" class="section">
+            <h2>Top Chatters over 1000 Messages</h2>
+            <h3>You guys rock</h3>
+            <div id="chatter-list"></div>
+        </section>
+
+        <section id="media-highlights" class="section">
+            <h2>Media Highlights</h2>
+            <div class="media-container">
+                <div class="media-item">
+                    <img src="highlight1.jpg" alt="Highlight 1">
+                </div>
+                <div class="media-item">
+                    <video src="highlight2.mp4" controls></video>
+                </div>
+                <!-- Add more media items as needed -->
+            </div>
+        </section>
+
+        <section id="word-cloud" class="section">
+            <h2>Most Used Words</h2>
+            <div id="word-cloud-container"></div>
+        </section>
+
+        <section id="chat-insights" class="section">
+            <h2>Chat Insights</h2>
+            <div class="insights-container">
+                <div class="insight-item" id="avgMessagesPerStream">
+                    <div class="insight-circle"></div>
+                    <h3>Avg. Messages per Stream</h3>
+                    <p class="insight-value">0</p>
+                </div>
+                <div class="insight-item" id="longestMessage">
+                    <div class="insight-circle"></div>
+                    <h3>Longest Message</h3>
+                    <p class="insight-value">0 characters</p>
+                </div>
+                <div class="insight-item" id="busiesHour">
+                    <div class="insight-circle"></div>
+                    <h3>Busiest Hour</h3>
+                    <p class="insight-value">00:00</p>
+                </div>
+                <div class="insight-item" id="mostActiveDay">
+                    <div class="insight-circle"></div>
+                    <h3>Most Active Day</h3>
+                    <p class="insight-value">Monday</p>
+                </div>
+                <div class="insight-item" id="lateStream">
+                    <div class="insight-circle"></div>
+                    <h3>Liv has been late to stream</h3>
+                    <p class="insight-value">12 Times this year</p>
+                </div>
+                <div class="insight-item" id="timesLivCalledShort">
+                    <div class="insight-circle"></div>
+                    <h3>Times liv has been called short</h3>
+                    <p class="insight-value">164</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="emote-stats" class="section">
+            <h2>Most Used Emotes</h2>
+            <div id="emote-list"></div>
+        </section>
+
+        <section id="unique-chatters" class="section">
+            <h2>Community Growth</h2>
+            <div class="stat-container">
+                <div class="stat">
+                    <span class="number" id="uniqueChatters">0</span>
+                    <span class="label">Unique Chatters</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="stream-milestones" class="section">
+            <h2>Stream Milestones</h2>
+            <div id="milestone-list"></div>
+        </section>
+
+        <section id="highlights" class="section">
+            <h2>Year Highlights</h2>
+            <div class="highlight-container">
+                <!-- Add highlight items here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Thank you for an amazing year of chats and streams!</p>
+        <p>© 2023 Obliviosa. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
