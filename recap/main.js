@@ -58,12 +58,6 @@ ScrollTrigger.create({
     onEnter: () => animateValue("messageCount", 0, stats.totalMessages, 2000)
 });
 
-ScrollTrigger.create({
-    trigger: "#unique-chatters",
-    start: "top 80%",
-    onEnter: () => animateValue("uniqueChatters", 0, stats.uniqueChatters, 2000)
-});
-
 // Populate top chatters list
 const topChatters = [
     { name: 'Phantomspower', messages: 11320 },
@@ -220,18 +214,6 @@ gsap.utils.toArray('.emote-progress-bar').forEach(bar => {
     });
 });
 
-const highlightContainer = document.querySelector('.highlight-container');
-highlights.forEach(highlight => {
-    const item = document.createElement('div');
-    item.className = 'highlight-item';
-    item.innerHTML = `
-        <img src="${highlight.image}" alt="${highlight.title}">
-        <h3>${highlight.title}</h3>
-        <p>${highlight.description}</p>
-    `;
-    highlightContainer.appendChild(item);
-});
-
 // Animate highlight items
 gsap.utils.toArray('.highlight-item').forEach((item, index) => {
     gsap.from(item, {
@@ -247,14 +229,66 @@ gsap.utils.toArray('.highlight-item').forEach((item, index) => {
     });
 });
 
+const timelineEvents = [
+    { date: 'September 1, 2023', title: 'New Age Obliviosa', description: 'Liv comes back from a long hiatus!' },
+    { date: 'September 27, 2023', title: 'Subtember subathon', description: 'Raised $5000 for charity in a single stream.' },
+    { date: 'June 20, 2023', title: 'New emote unlocked', description: 'The community unlocked the new "PogChamp" emote!' },
+    // Add more events to make the timeline longer and scrollable
+];
+
+function createTimeline() {
+    const container = document.querySelector('.timeline-container');
+    timelineEvents.forEach((event, index) => {
+        const item = document.createElement('div');
+        item.className = 'timeline-item';
+        item.innerHTML = `
+            <div class="timeline-content">
+                <h3>${event.date}</h3>
+                <h4>${event.title}</h4>
+                <p>${event.description}</p>
+            </div>
+        `;
+        container.appendChild(item);
+    });
+}
+
+createTimeline();
+
+// Add scroll behavior
+const timelineWrapper = document.querySelector('.timeline-wrapper');
+let isTimelineScrollable = true;
+
+window.addEventListener('scroll', () => {
+    const timelineRect = timelineWrapper.getBoundingClientRect();
+    const timelineBottom = timelineRect.bottom;
+    const windowHeight = window.innerHeight;
+
+    if (timelineBottom <= windowHeight && isTimelineScrollable) {
+        window.scrollTo(0, window.scrollY - 1);
+        isTimelineScrollable = false;
+    } else if (timelineBottom > windowHeight) {
+        isTimelineScrollable = true;
+    }
+});
+
+timelineWrapper.addEventListener('scroll', (e) => {
+    e.stopPropagation();
+    const { scrollTop, scrollHeight, clientHeight } = e.target;
+    if (scrollTop + clientHeight >= scrollHeight) {
+        isTimelineScrollable = false;
+    } else {
+        isTimelineScrollable = true;
+    }
+});
+
 // Stream milestones data
 const streamMilestones = [
-    { icon: '🏆', title: 'Longest Stream', value: '8 hours' },
-    { icon: '👥', title: 'Peak Viewers', value: '500' },
-    { icon: '💬', title: 'Most Active Stream', value: '10,000 messages' },
-    { icon: '🎉', title: 'Follower Milestone', value: '5,000 followers' },
-    { icon: '💖', title: 'Most Cheers', value: '50,000 bits' },
-    { icon: '🎁', title: 'Most Gifted Subs', value: '100 in one stream' }
+    { icon: '🏆', title: 'Longest Stream', value: '24 hours' },
+    { icon: '👥', title: 'Peak Viewers', value: '941' },
+    { icon: '💬', title: 'Most Active Stream', value: '5548 messages' },
+    { icon: '🎉', title: 'Latest Follower Milestone', value: '3,000 followers' },
+    { icon: '💖', title: 'Most Cheers', value: '10,451 bits in one stream' },
+    { icon: '🎁', title: 'Most Gifted Subs', value: '703 in one stream' }
 ];
 
 // Populate stream milestones
@@ -284,3 +318,34 @@ gsap.utils.toArray('.milestone-item').forEach((item, index) => {
         }
     });
 });
+
+// Confetti effect for milestones
+function triggerConfetti() {
+    confetti({
+        particleCount: 1000,
+        spread: 1000,
+        origin: { y: 0.5 }
+    });
+}
+
+// Trigger confetti when milestone section is in view
+ScrollTrigger.create({
+    trigger: "#stream-milestones",
+    start: "top center",
+    onEnter: triggerConfetti
+});
+
+// Scroll to top functionality
+const scrollToTopButton = document.getElementById("scrollToTop");
+
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopButton.style.display = "block";
+    } else {
+        scrollToTopButton.style.display = "none";
+    }
+};
+
+scrollToTopButton.onclick = function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+};
