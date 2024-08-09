@@ -1,11 +1,6 @@
 // Initialize GSAP
 gsap.registerPlugin(ScrollTrigger);
 
-// Particle.js configuration
-particlesJS.load('particles-js', 'particles.json', function() {
-    console.log('particles.js loaded');
-});
-
 // Animate header
 gsap.from("header h1", {
     opacity: 0,
@@ -138,42 +133,6 @@ for (let i = 0; i < 50; i++) {
     animatedBg.appendChild(star);
 }
 
-// Word cloud
-const words = [
-    {text: 'hello', size: 40},
-    {text: 'world', size: 30},
-    {text: 'chat', size: 50},
-    // ... add more words ...
-];
-
-const layout = d3.layout.cloud()
-    .size([500, 500])
-    .words(words)
-    .padding(5)
-    .rotate(() => ~~(Math.random() * 2) * 90)
-    .font("Impact")
-    .fontSize(d => d.size)
-    .on("end", draw);
-
-layout.start();
-
-function draw(words) {
-    d3.select("#word-cloud-container").append("svg")
-        .attr("width", layout.size()[0])
-        .attr("height", layout.size()[1])
-        .append("g")
-        .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
-        .selectAll("text")
-        .data(words)
-        .enter().append("text")
-        .style("font-size", d => d.size + "px")
-        .style("font-family", "Impact")
-        .style("fill", () => d3.schemeCategory10[~~(Math.random() * 10)])
-        .attr("text-anchor", "middle")
-        .attr("transform", d => "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")")
-        .text(d => d.text);
-}
-
 // Chat insights data
 const chatInsights = {
     avgMessagesPerStream: "74299",
@@ -221,21 +180,6 @@ Object.keys(chatInsights).forEach(key => {
         }
     }
 });
-
-// Most used words (excluding common words)
-const mostUsedWords = [
-    { word: "awesome", count: 1523 },
-    { word: "poggers", count: 1245 },
-    { word: "lol", count: 987 },
-    { word: "wow", count: 876 },
-    { word: "thanks", count: 765 }
-];
-
-// Add this to your existing word cloud code
-words.push(...mostUsedWords.map(w => ({ text: w.word, size: w.count / 30 })));
-
-// Restart the word cloud layout with the new words
-layout.stop().words(words).start();
 
 // Emote stats
 const emotes = [
@@ -305,10 +249,10 @@ gsap.utils.toArray('.highlight-item').forEach((item, index) => {
 
 // Stream milestones data
 const streamMilestones = [
-    { icon: '🏆', title: 'Longest Stream', value: '24 hours' },
-    { icon: '👥', title: 'Peak Viewers', value: '941' },
+    { icon: '🏆', title: 'Longest Stream', value: '8 hours' },
+    { icon: '👥', title: 'Peak Viewers', value: '500' },
     { icon: '💬', title: 'Most Active Stream', value: '10,000 messages' },
-    { icon: '🎉', title: 'Follower Milestone', value: '3k followers' },
+    { icon: '🎉', title: 'Follower Milestone', value: '5,000 followers' },
     { icon: '💖', title: 'Most Cheers', value: '50,000 bits' },
     { icon: '🎁', title: 'Most Gifted Subs', value: '100 in one stream' }
 ];
