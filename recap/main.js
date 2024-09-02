@@ -60,31 +60,31 @@ ScrollTrigger.create({
 
 // Populate top chatters list
 const topChatters = [
-    { name: 'Phantomspower', messages: 11320 },
-    { name: 'minoarno', messages: 7772 },
-    { name: 'OfficiallySp', messages: 6864 },
-    { name: 'ObliviosaOfficial', messages: 6825 },
-    { name: 'ItsChrisyBaby', messages: 6693 },
+    { name: 'Phantomspower', messages: 11802 },
+    { name: 'minoarno', messages: 7824 },
+    { name: 'OfficiallySp', messages: 7516 },
+    { name: 'ItsChrisyBaby', messages: 7143 },
+    { name: 'ObliviosaOfficial', messages: 7005 },
     { name: 'extremedolphins', messages: 5463 },
-    { name: 'Knight1y', messages: 3720 },
-    { name: 'TheOneAndOnlyDo', messages: 3692 },
-    { name: 'AngleGabriel__', messages: 3623 },
-    { name: 'MrXadion', messages: 3523 },
-    { name: 'AKIBA212', messages: 3190 },
+    { name: 'AngleGabriel__', messages: 4083 },
+    { name: 'TheOneAndOnlyDo', messages: 3948 },
+    { name: 'Knight1y', messages: 3825 },
+    { name: 'MrXadion', messages: 3655 },
+    { name: 'AKIBA212', messages: 3234 },
+    { name: 'FaTtYShOw', messages: 3098 },
     { name: 'LowlifePrincessx', messages: 3058 },
-    { name: 'FaTtYShOw', messages: 2968 },
-    { name: 'OSFrog', messages: 2555 },
-    { name: 'shyuwugirl', messages: 2462 },
-    { name: 'kotaro_123456', messages: 2377 },
-    { name: 'Buildingbob345', messages: 1893 },
+    { name: 'OSFrog', messages: 2763 },
+    { name: 'shyuwugirl', messages: 2721 },
+    { name: 'kotaro_123456', messages: 2675 },
+    { name: 'Buildingbob345', messages: 1950 },
+    { name: 'firesaffron', messages: 1622 },
     { name: 'FleurDeLocean', messages: 1613 },
-    { name: 'firesaffron', messages: 1609 },
-    { name: 'KingCobraDK', messages: 1451 },
+    { name: 'KingCobraDK', messages: 1473 },
+    { name: 'RD07X__', messages: 1354 },
     { name: 'VelvetGeisha', messages: 1277 },
-    { name: 'RD07X__', messages: 1254 },
-    { name: 'emilauss', messages: 1226 },
+    { name: 'emilauss', messages: 1240 },
     { name: 'PrizeGottiGaming', messages: 1068 },
-    { name: 'Thicc_Loaf', messages: 1020 }
+    { name: 'Thicc_Loaf', messages: 1041 }
 ];
 
 const chatterList = document.getElementById('chatter-list');
@@ -129,12 +129,12 @@ for (let i = 0; i < 50; i++) {
 
 // Chat insights data
 const chatInsights = {
-    avgMessagesPerStream: "74299",
+    avgMessagesPerStream: "152894",
     longestMessage: "8th January 2024 @ 2:35 PM by minoarno",
-    busiestHour: "20:00",
+    busiestHour: "1250",
     mostActiveDay: "Thursday",
     lateStream: "12 Times this year",
-    timesLivCalledShort: "164"
+    timesLivCalledShort: "81"
 };
 
 // Animate chat insights
@@ -177,11 +177,11 @@ Object.keys(chatInsights).forEach(key => {
 
 // Emote stats
 const emotes = [
-    { name: ' Lighter ', count: 1477, image: '../assets/livmotes/oblivi118Lighter.png' },
-    { name: ' Heart ', count: 1281, image: '../assets/livmotes/oblivi118Heart.png' },
-    { name: ' Sip ', count: 1189, image: '../assets/livmotes/oblivi118Sip.gif' },
-    { name: ' Cookie ', count: 1100, image: '../assets/livmotes/oblivi118Cookie.gif' },
-    { name: ' Blush ', count: 550, image: '../assets/livmotes/oblivi118Blush.png' }
+    { name: ' Lighter ', count: 1502, image: '../assets/livmotes/oblivi118Lighter.png' },
+    { name: ' Heart ', count: 1365, image: '../assets/livmotes/oblivi118Heart.png' },
+    { name: ' Sip ', count: 1196, image: '../assets/livmotes/oblivi118Sip.gif' },
+    { name: ' Cookie ', count: 1161, image: '../assets/livmotes/oblivi118Cookie.gif' },
+    { name: ' Blush ', count: 697, image: '../assets/livmotes/oblivi118Blush.png' }
 ];
 
 const emoteList = document.getElementById('emote-list');
@@ -229,64 +229,12 @@ gsap.utils.toArray('.highlight-item').forEach((item, index) => {
     });
 });
 
-const timelineEvents = [
-    { date: 'September 1, 2023', title: 'New Age Obliviosa', description: 'Liv comes back from a long hiatus!' },
-    { date: 'September 27, 2023', title: 'Subtember subathon', description: 'Raised $5000 for charity in a single stream.' },
-    { date: 'June 20, 2023', title: 'New emote unlocked', description: 'The community unlocked the new "PogChamp" emote!' },
-    // Add more events to make the timeline longer and scrollable
-];
-
-function createTimeline() {
-    const container = document.querySelector('.timeline-container');
-    timelineEvents.forEach((event, index) => {
-        const item = document.createElement('div');
-        item.className = 'timeline-item';
-        item.innerHTML = `
-            <div class="timeline-content">
-                <h3>${event.date}</h3>
-                <h4>${event.title}</h4>
-                <p>${event.description}</p>
-            </div>
-        `;
-        container.appendChild(item);
-    });
-}
-
-createTimeline();
-
-// Add scroll behavior
-const timelineWrapper = document.querySelector('.timeline-wrapper');
-let isTimelineScrollable = true;
-
-window.addEventListener('scroll', () => {
-    const timelineRect = timelineWrapper.getBoundingClientRect();
-    const timelineBottom = timelineRect.bottom;
-    const windowHeight = window.innerHeight;
-
-    if (timelineBottom <= windowHeight && isTimelineScrollable) {
-        window.scrollTo(0, window.scrollY - 1);
-        isTimelineScrollable = false;
-    } else if (timelineBottom > windowHeight) {
-        isTimelineScrollable = true;
-    }
-});
-
-timelineWrapper.addEventListener('scroll', (e) => {
-    e.stopPropagation();
-    const { scrollTop, scrollHeight, clientHeight } = e.target;
-    if (scrollTop + clientHeight >= scrollHeight) {
-        isTimelineScrollable = false;
-    } else {
-        isTimelineScrollable = true;
-    }
-});
-
 // Stream milestones data
 const streamMilestones = [
     { icon: '🏆', title: 'Longest Stream', value: '24 hours' },
     { icon: '👥', title: 'Peak Viewers', value: '941' },
     { icon: '💬', title: 'Most Active Stream', value: '5548 messages' },
-    { icon: '🎉', title: 'Latest Follower Milestone', value: '3,000 followers' },
+    { icon: '🎉', title: 'Latest Follower Milestone', value: '2,980 followers' },
     { icon: '💖', title: 'Most Cheers', value: '10,451 bits in one stream' },
     { icon: '🎁', title: 'Most Gifted Subs', value: '703 in one stream' }
 ];
