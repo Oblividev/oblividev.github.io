@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obliviosa Foundation</title>
+    <style>
+        :root {
+            --primary-color: #6441a5;
+            --secondary-color: #b9a3e3;
+            --background-color: #280042;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(100, 65, 165, 0.9), rgba(100, 65, 165, 0.9)), url('assets/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #e3ceff;
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .features {
+            padding: 2rem 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>The Obliviosa Foundation</h1>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>You can make a difference</h2>
+            <p>Just $10 can help a starving musician today</p>
+            <a href="https://streamlabs.com/obliviosaofficial/tip" class="cta-button">Donate Now</a>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-music fa-3x" style="color: var(--primary-color)"></i>
+                <h3>Music</h3>
+                <p>your support helps Obliviosa's everywhere sing their hearts out to millions of people</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-gamepad fa-3x" style="color: var(--primary-color)"></i>
+                <h3>Gaming</h3>
+                <p>Obliviosa's across the nation will never have to suffer another league of legends match.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-heart fa-3x" style="color: var(--primary-color)"></i>
+                <h3>Community</h3>
+                <p>Every contribution will stop at least one person from calling any Obliviosa's short</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="donate">
+        <div class="feature-card">
+            <h2>Learn more about us</h2>
+            <p>You can learn more about the Obliviosa foundation and how you can help us here</p>
+            <a href="https://www.twitch.tv/obliviosaofficial/" class="cta-button">Learn more</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Obliviosa Foundation. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
