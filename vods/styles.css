@@ -122,7 +122,7 @@ body {
 
 .search-input {
     width: 100%;
-    padding: 0.9rem 2.75rem 0.9rem 2.75rem;
+    padding: 0.9rem 2.75rem;
     font-size: 1rem;
     font-family: inherit;
     background: var(--bg-card);
