@@ -189,7 +189,7 @@
                 default:
                     return (b.date || '').localeCompare(a.date || '');
             }
-        })]);
+        })];
 
         return list;
     }
