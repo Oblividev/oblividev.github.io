@@ -1,92 +1,52 @@
 {
   "vods": [
     {
-      "id": "song-of-nunu-pt1",
-      "title": "Song of Nunu - Part 1",
-      "date": "2024-01-15",
-      "game": "Song of Nunu",
-      "tags": ["rpg", "league-of-legends", "first-playthrough"],
-      "duration": "2:45:00",
-      "durationSeconds": 9900,
-      "youtubeId": "dQw4w9WgXcQ",
-      "description": "First time playing Song of Nunu!"
+      "id": "12-22-24-dnd-with-beholdbrooke-friends-x-christmas-stream-on-the-26th-be-there-xx-puppy-join-to",
+      "title": "Dnd With @Beholdbrooke & Friends X Christmas Stream On The 26Th Be There Xx !Puppy !Join To Play With Me",
+      "date": "2024-12-22",
+      "game": "DND",
+      "tags": [
+        "DND"
+      ],
+      "duration": "4:20:50",
+      "durationSeconds": 15650,
+      "youtubeId": "7lgGb1XDOf8",
+      "description": ""
     },
     {
-      "id": "song-of-nunu-pt2",
-      "title": "Song of Nunu - Part 2",
-      "date": "2024-01-18",
-      "game": "Song of Nunu",
-      "tags": ["rpg", "league-of-legends", "first-playthrough"],
-      "duration": "3:12:00",
-      "durationSeconds": 11520,
-      "youtubeId": "dQw4w9WgXcQ",
-      "description": "Continuing Song of Nunu!"
+      "id": "1-8-25-heya-lovelies-x-drawing-my-viewers-x-come-hang-lovelies-x-puppy-discord",
+      "title": "Heya Lovelies X Drawing My Viewers X Come Hang Lovelies X !Puppy !Discord",
+      "date": "2025-01-08",
+      "game": "Art",
+      "tags": [
+        "Art"
+      ],
+      "duration": "4:29:40",
+      "durationSeconds": 16180,
+      "youtubeId": "Tlco2yISRk4",
+      "description": ""
     },
     {
-      "id": "song-of-nunu-pt3",
-      "title": "Song of Nunu - Part 3",
-      "date": "2024-01-22",
-      "game": "Song of Nunu",
-      "tags": ["rpg", "league-of-legends", "first-playthrough"],
-      "duration": "2:58:00",
-      "durationSeconds": 10680,
-      "youtubeId": "dQw4w9WgXcQ",
-      "description": "Song of Nunu - Part 3"
+      "id": "12-30-24-last-stream-of-2024-x-come-hang-cuties-x-puppy-join-to-play-with-me",
+      "title": "Last Stream Of 2024 X Come Hang Cuties X !Puppy !Join To Play With Me",
+      "date": "2024-12-30",
+      "game": "League Of Legends",
+      "tags": [],
+      "duration": "5:10:50",
+      "durationSeconds": 18650,
+      "youtubeId": "2DM2bfhpLWs",
+      "description": ""
     },
     {
-      "id": "it-takes-two-pt1",
-      "title": "It Takes Two - Part 1",
-      "date": "2024-02-01",
-      "game": "It Takes Two",
-      "tags": ["co-op", "platformer", "first-playthrough"],
-      "duration": "3:30:00",
-      "durationSeconds": 12600,
-      "youtubeId": "dQw4w9WgXcQ",
-      "description": "Starting It Takes Two!"
-    },
-    {
-      "id": "dead-island-2-pt1",
-      "title": "Dead Island 2 - Part 1",
-      "date": "2024-01-10",
-      "game": "Dead Island 2",
-      "tags": ["zombie", "action", "first-playthrough"],
-      "duration": "4:15:00",
-      "durationSeconds": 15300,
-      "youtubeId": "dQw4w9WgXcQ",
-      "description": "Dead Island 2 - Part 1"
-    },
-    {
-      "id": "hollow-knight-pt1",
-      "title": "Hollow Knight - Part 1",
-      "date": "2023-12-10",
-      "game": "Hollow Knight",
-      "tags": ["metroidvania", "indie", "platformer", "on-hold"],
-      "duration": "3:00:00",
-      "durationSeconds": 10800,
-      "youtubeId": "dQw4w9WgXcQ",
-      "description": "Hollow Knight - Part 1 (ON HOLD)"
-    },
-    {
-      "id": "stray-pt1",
-      "title": "Stray - Part 1",
-      "date": "2024-01-05",
-      "game": "Stray",
-      "tags": ["indie", "puzzle", "cat", "first-playthrough"],
-      "duration": "2:45:00",
-      "durationSeconds": 9900,
-      "youtubeId": "dQw4w9WgXcQ",
-      "description": "Stray - Part 1"
-    },
-    {
-      "id": "elden-ring-pt1",
-      "title": "Elden Ring - Part 1",
-      "date": "2024-01-20",
-      "game": "Elden Ring",
-      "tags": ["souls", "rpg", "first-playthrough", "in-progress"],
-      "duration": "5:00:00",
-      "durationSeconds": 18000,
-      "youtubeId": "dQw4w9WgXcQ",
-      "description": "Elden Ring - Part 1 (IN PROGRESS)"
+      "id": "1-11-25-happy-saturday-x-come-hang-lovelies-x-puppy-discord-eng-frnvenc-av1-10bit",
+      "title": "Happy Saturday X Come Hang Lovelies X !Puppy !Discord",
+      "date": "2025-01-11",
+      "game": "",
+      "tags": [],
+      "duration": "",
+      "durationSeconds": 0,
+      "youtubeId": "W_t0rqRK4g8",
+      "description": ""
     }
   ]
 }

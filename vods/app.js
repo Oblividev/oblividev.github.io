@@ -77,11 +77,12 @@
     }
 
     /**
-     * Load VOD data
+     * Load VOD data (server proxies from remote, falls back to local)
      */
     async function loadData() {
         try {
             const res = await fetch(DATA_URL);
+            if (!res.ok) throw new Error(res.status);
             const data = await res.json();
             allVods = data.vods || [];
             initFuse();
@@ -92,7 +93,7 @@
             bindEvents();
         } catch (err) {
             console.error('Failed to load VOD data:', err);
-            elements.vodGrid.innerHTML = '<p class="no-results">Failed to load VOD data. Check the console.</p>';
+            elements.vodGrid.innerHTML = '<p class="no-results">Failed to load VOD data. Check your internet connection or try again later.</p>';
         }
     }
 
